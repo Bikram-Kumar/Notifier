@@ -1,13 +1,13 @@
 package com.bikram.notifier;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
+.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected vo
+import android.osid onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
