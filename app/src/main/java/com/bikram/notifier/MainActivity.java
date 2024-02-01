@@ -9,6 +9,7 @@ import android.app.NotificationManager;
 import android.app.NotificationChannel;
 import android.content.Intent;
 import android.app.PendingIntent;
+import android.app.AlarmManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,6 +41,23 @@ public class MainActivity extends AppCompatActivity {
         createNotificationChannel();
         
         NotificationManagerCompat.from(this).notify(1, builder.build());
+        MainActivity self = this;
+        
+        
+        
+        Intent nextAlarmIntent = new Intent(this, MainActivity.class);
+        PendingIntent nextAlarmPIntent = PendingIntent.getActivity(this,0,nextAlarmIntent,0);
+        
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 5000, nextAlarmPIntent);
+       
+               
+        
+        NotificationManagerCompat.from(self).notify(2, builder.build());
+                    
+       
+                
+
         
         
         
