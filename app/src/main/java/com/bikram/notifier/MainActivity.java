@@ -10,6 +10,7 @@ import android.app.NotificationChannel;
 import android.content.Intent;
 import android.app.PendingIntent;
 import android.app.AlarmManager;
+import android.net.Uri;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,8 +23,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        /*Intent i = new Intent();
+        i.setClassName("com.bikram.flashlight", "com.bikram.flashlight.MainActivity");
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);*/
         
         
+        Intent launchNotifManager = new Intent(this, NotifManager.class);
+        sendBroadcast(launchNotifManager);
+        
+        
+        /*
         
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -38,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setContentIntent(pendingIntent).setAutoCancel(true);
         
         
-        createNotificationChannel();
+        //createNotificationChannel();
         
         NotificationManagerCompat.from(this).notify(1, builder.build());
         MainActivity self = this;
@@ -58,13 +68,13 @@ public class MainActivity extends AppCompatActivity {
        
                 
 
-        
+        */
         
         
     }
     
     
-    
+    /*
     
     private void createNotificationChannel() {
         // return if API is below 26... NO SUPPORT
@@ -75,6 +85,6 @@ public class MainActivity extends AppCompatActivity {
         getSystemService(NotificationManager.class).createNotificationChannel(channel);
         
     }
-    
+    */
     
 }
